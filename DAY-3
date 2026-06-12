@@ -1,0 +1,357 @@
+22.return only special character only
+
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char ch = s.charAt(i);
+
+            if (!(ch >= 'A' && ch <= 'Z') && !(ch >= 'a' && ch <= 'z') && !(ch >= '0' && ch <= '9') && ch != ' ') {
+ 
+
+                System.out.print(ch);
+            }
+        }
+    }
+}
+
+23.   finding number of subarrays
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+.
+            for (int j = i; j < n; j++) {
+                sum = sum + arr[j];
+
+                if (sum == 0) {
+                    count++;
+                }
+            }
+        }
+
+        System.out.println(count);
+    }
+}
+ 
+
+24.pattern using Alaphabet
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int a=sc.nextInt();
+	    int t=2*a-1;
+	    for(int row=0;row<a;row++){
+	        for(int col=a-1;col>=row;col--){
+	            System.out.print((char)('A' + col));
+	        }
+	
+	        System.out.println( );
+	    }
+	
+	
+	}
+}
+
+25. second largest
+
+import java.util.ArrayList;
+
+class Main {
+    public static void main (String[] args) {
+ 
+ 
+ 
+      	ArrayList<Integer> a = new ArrayList<>();
+ 
+ 
+ 
+      	a.add(1);
+      	a.add(2);
+      	a.add(3);
+      	a.add(4);
+        a.add(5);
+      	a.add(6);
+      	a.add(7);
+      	a.add(8);
+      	a.add(9);
+      	a.add(10);
+ 
+      	int largest=a.get(0);
+ 
+      	for(int i=1;i<a.size()-1;i++){
+      	    if(a.get(i)-1>largest)
+      	        largest=a.get(i);
+ 
+      	    }
+ 
+ 
+      	 System.out.println("Second largest"+ "=" +largest);
+ 
+ 
+ 
+      	        }
+ 
+      	    }
+ 
+
+26. Remove duplicate
+
+
+import java.util.ArrayList;
+
+class Main {
+    public static void main (String[] args) {
+ 
+ 
+ 
+      	ArrayList<Integer> a = new ArrayList<>();
+ 
+ 
+ 
+      	a.add(1);
+      	a.add(2);
+      	a.add(3);
+      	a.add(2);
+        a.add(4);
+      	a.add(5);
+      	for(int i=0;i<a.size();i++){
+      	  for(int j=i+1;j<a.size();j++){
+ 
+      	    if(a.get(i)==a.get(j)){
+      	        a.remove(j);
+      	    }
+      	  }
+      	}
+ 
+      	        System.out.println(a);
+      	  }
+      	}
+
+27.Anagram
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string  1: ");
+        String a = sc.nextLine();
+ 
+
+       System.out.print("Enter a string  2: ");
+        String b = sc.nextLine();
+
+        for (int i = 0; i < a.length(); i++) {
+            for (int j=0; j < a.length(); j++) {
+
+                if (a.charAt(i) == b.charAt(j)) {
+                   System.out.println("Anagram");
+                }
+                else{
+                    System.out.println(" not Anagram");
+ 
+                }
+            }
+        }
+    }
+}
+
+ 
+
+
+28. printing student detail using ArrayList
+      Create New Project
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> id = new ArrayList<>();
+        ArrayList<String> name = new ArrayList<>();
+        ArrayList<String> phone = new ArrayList<>();
+
+        System.out.print("Enter number of students: ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+
+            System.out.print("Enter ID: ");
+            id.add(sc.nextInt());
+
+            System.out.print("Enter Name: ");
+            name.add(sc.next());
+
+            System.out.print("Enter Phone Number: ");
+            phone.add(sc.next());
+        }
+
+        System.out.println("\nStudent Details:");
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("ID    : " + id.get(i));
+            System.out.println("Name  : " + name.get(i));
+            System.out.println("Phone : " + phone.get(i));
+            System.out.println();
+        }
+    }
+}
+
+
+29.reverse a arraylist
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (num > 0) {
+            int digit = num % 10;
+            list.add(digit);
+            num = num / 10;
+        }
+
+        System.out.println("Reversed Number:");
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i));
+        }
+    }
+
+30. Anagram
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter String 1: ");
+        String a = sc.nextLine();
+
+        System.out.print("Enter String 2: ");
+        String b = sc.nextLine();
+
+        // Check lengths
+        if (a.length() != b.length()) {
+            System.out.println("Not Anagram");
+            return;
+        }
+
+        char[] arr1 = a.toCharArray();
+        char[] arr2 = b.toCharArray();
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println("Anagram");
+        } else {
+            System.out.println("Not Anagram");
+        }
+    }
+}
+
+31. pattern using Alaphabet
+Reverse Butterfly Pattern
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+
+ 
+            for (int j = 0; j < i; j++) {
+                System.out.print("b");
+            }
+
+ 
+            for (int j = 0; j < 2 * (n - i) - 1; j++) {
+                System.out.print("*");
+            }
+
+ 
+            for (int j = 0; j < i; j++) {
+                System.out.print("b");
+            }
+
+            System.out.println();
+        }
+    }
+}
+
+
+Another method(output different)
+
+
+
+import java.util.*;
+public class Tut
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		for (int i = n - 1; i >= 0; i--) {
+            for (int j = 1; j <= i; j++)
+                System.out.print("b");
+            for (int j = 2; j <= 2 * (n-i); j++)
+                System.out.print("*");
+            for (int j = 1; j <= i; j++)
+                System.out.print("b");
+            System.out.println();
+ 
+        }
+	}
+}
+

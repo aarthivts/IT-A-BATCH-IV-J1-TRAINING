@@ -1,0 +1,460 @@
+10.  For each adjacent pair of sticks, to get the smallest possible bigger stick, keep the smaller stick and remove the larger one.
+
+
+
+
+import java.util.Scanner;
+class Main{
+    public static void main(String args[])
+    {
+     System.out.println("Enter the size");
+ 
+ 
+        int sum=0;
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[]a=new int[n];
+ 
+        for(int i=0;i<n;i++){
+ 
+ 
+            a[i]=sc.nextInt();
+        }
+ 
+ 
+        for(int i=0;i<n;i+=2){
+            if(a[i]<a[i+1]){
+ 
+              sum+=a[i];
+            }
+            else{
+                sum+=a[i+1];
+            }
+ 
+            }
+ 
+
+ 
+              System.out.println(sum);
+ 
+          }
+ 
+ 
+        }
+
+11.  A truck owner wants to calculate fuel consumption.
+
+Input the number of liters of fuel filled in the tank.
+Input the distance traveled in kilometers.
+Calculate:
+Liters per 100 KM = (liters / distance) × 100
+Miles per Gallon using:
+1 km = 0.6214 miles
+1 liter = 0.2642 gallons
+If liters or distance is less than or equal to 0, print "Invalid Input".
+Simple Logic
+Read liters
+If liters <= 0 → Invalid Input
+
+Read distance
+If distance <= 0 → Invalid Input
+
+Calculate Liters/100KM
+Calculate Miles/Gallon
+
+Print results
+
+For CTS exams/interviews, you can remember it as:
+
+"Read input → Check invalid → Apply formulas → Print output."
+
+
+
+ANSWER:
+
+
+import java.util.Scanner;
+class Main{
+    public static void main(String args[])
+    {
+ 
+ 
+ 
+ 
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number of litres to fill the tank");
+        double litre=sc.nextDouble();
+        if(litre<0){
+            System.out.println("the litre is invalid");
+            return;
+ 
+        }
+        System.out.println("Enter the distance covered");
+        double distance=sc.nextDouble();
+        if(distance<0){
+            System.out.println("the distance  is invalid");
+            return;
+        }
+        double a;
+        a=litre/distance*100;
+ 
+ 
+        double miles=distance*0.6214;
+        double gallons=litre*0.2642;
+ 
+        double b;
+        b=miles/gallons;
+        System.out.println("Litres/100KM");
+        System.out.printf("%.2f\n",a);
+ 
+       System.out.println("Miles/gallons");
+        System.out.printf("%.2f",b);
+ 
+        }
+ 
+        }
+
+12.  combining two array
+
+
+import java.util.Scanner;
+class Main{
+    public static void main(String args[])
+    {
+     System.out.println("Enter the size");
+ 
+ 
+        Scanner sc=new Scanner(System.in);
+ 
+        int n=sc.nextInt();
+        int[]a=new int[n];
+        int m=sc.nextInt();
+        int[]b=new int[m];
+        for (int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        for (int j=0;j<m;j++){
+ 
+            b[j]=sc.nextInt();
+        }
+        int[]c=new int[n+m];
+ 
+        for(int i=0;i<n;i++){
+            c[i]=a[i];
+        }
+ 
+        for(int j=0;j<m;j++){
+        c[n+j]=b[j];
+        }
+        for(int i=0;i<n+m;i++){
+ 
+        System.out.println(c[i]);
+        }
+        }
+    }
+
+13. Adding three value to get target value
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+
+        int target = sc.nextInt();
+
+ 
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                for (int k = j + 1; k < n; k++) {
+
+                    if (a[i] + a[j] + a[k] == target) {
+                        System.out.println(a[i] + " " + a[j] + " " + a[k]);
+                    }
+                }
+            }
+        }
+    }
+}
+
+14.  Adding two values to get target
+
+import java.util.Scanner;
+
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+ 
+        int target = sc.nextInt();
+
+ 
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+ 
+
+                    if (a[i] + a[j] == target) {
+                        System.out.println(a[i] + " " + a[j]);
+                    }
+ 
+            }
+        }
+    }
+}
+
+15.  adding the first value in both a and b like that for all value and store in c.
+
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Main {
+    public static void main(String args[]) {
+
+        System.out.println("Enter the size");
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] a = new int[n];
+
+        int m = sc.nextInt();
+        int[] b = new int[m];
+
+ 
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+
+ 
+        for (int i = 0; i < m; i++) {
+            b[i] = sc.nextInt();
+        }
+
+        int size = Math.min(n, m);
+        int[] c = new int[n];
+
+for (int i = 0; i < n; i++) {
+    c[i] = a[i] + b[i];
+}
+System.out.println("Array c:");
+for (int i = 0; i < n; i++) {
+    System.out.print(c[i] + " ");
+}
+
+Arrays.sort(c);
+
+System.out.println("\nSorted c:");
+for (int i = 0; i < n; i++) {
+    System.out.print(c[i] + " ");
+}
+    }
+}
+ 
+
+16 ASCII value find
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+ 
+        System.out.print("Enter a character: ");
+        ch = sc.next().charAt(0);
+
+ 
+        char result = (ch >= 'A' && ch <= 'Z') ? (char)(ch + 32) : ch;
+
+        System.out.println("Lowercase character: " + result);
+        System.out.println("Ascii value: " + (int)result);
+    }
+}
+ 
+17 .Reverse to find palindrome
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a string");
+        String s = sc.nextLine();
+        System.out.println(s);
+ 
+
+        String rev = "";
+
+        for(int i = s.length() - 1; i >= 0; i--) {
+            rev = rev + s.charAt(i);
+        }
+
+        System.out.println("Reverse String: " + rev);
+
+        if(s.equals(rev))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+ 
+18. ASCII value caps ans small char
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        int sum=0;
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+
+ 
+        if(ch <= 'A' && ch >= 'Z'){
+ 
+                  sum=ch+32;
+ 
+        }
+        else {
+            sum=ch;
+        }
+        System.out.println(sum);
+ 
+ 
+
+ 
+    }
+}
+
+19. vowels count print the value
+
+
+import java.util.Scanner;
+
+class Main{
+    public static void main(String args[])
+    {
+ 
+ 
+ 
+ 
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int count=0;
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+
+ 
+        if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+            System.out.println(ch);
+ 
+ 
+         count+=1;
+        }
+        }
+        System.out.println(count);
+ 
+ 
+    }
+}
+
+20. counting frequency letter in string
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String s = sc.nextLine();
+
+        boolean[] visited = new boolean[s.length()];
+
+        for (int i = 0; i < s.length(); i++) {
+
+            if (visited[i])
+                continue;
+
+            int count = 1;
+
+            for (int j = i + 1; j < s.length(); j++) {
+
+                if (s.charAt(i) == s.charAt(j)) {
+                    count++;
+                    visited[j] = true;
+                }
+            }
+
+            System.out.println(s.charAt(i) + " ---> " + count + " times");
+        }
+    }
+}
+
+
+
+21.  printing first substring in a palindrome
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String s = sc.next();
+
+        String first = "";
+
+        System.out.println("Palindrome Substrings:");
+
+        for (int i = 0; i < s.length(); i++) {
+
+            for (int j = i + 1; j <= s.length(); j++) {
+
+                String sub = s.substring(i, j);
+
+                String rev = "";
+
+                for (int k = sub.length() - 1; k >= 0; k--) {
+                    rev = rev + sub.charAt(k);
+                }
+
+                if (sub.equals(rev) && sub.length() > 1) {
+                    System.out.println(sub);
+
+                    if (first.equals("")) {
+                        first = sub;
+                    }
+                }
+            }
+        }
+
+        System.out.println("First palindrome substring = " + first);
+    }
+}

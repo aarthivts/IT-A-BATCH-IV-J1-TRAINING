@@ -1,0 +1,123 @@
+1.//ABCDEF Pattern Problem
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    for(int i = n;i>=1;i--){
+	        for(int j = 0;j<i;j++){
+	            System.out.print((char)('A'+ j));
+	        }
+	        System.out.println( );
+	    }
+		
+	}
+}        
+
+2.//Alphabet Problem
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = 5;
+	    for(int i = n;i>=1;i--){
+	        for(int j = n;j>=n-i+1;j--){
+	            System.out.print((char)('A'+ j-1));
+	        }
+	        System.out.println( );
+	    }
+		
+	}
+}
+
+//Alphabet ABC
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    
+	    char ch = 'E';
+	    
+	    for(int i = n ;i>=1;i--){
+	        for(int j = 1;j<=i;j++){
+	            if(ch>='A' && ch <='E'){
+	            System.out.print(ch + " ");
+	        }
+	        }
+	        ch--;
+	        System.out.println( );     
+	    }
+		
+	}
+}   
+
+3.//count the string repeat
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc. nextLine();
+
+        char[] ch = str.toCharArray();
+
+        for(int i = 0; i < ch.length; i++) {
+
+            int count = 1;
+
+            if(ch[i] == '1')
+                continue;   
+
+            for(int j = i + 1; j < ch.length; j++) {
+                if(ch[i] == ch[j]) {
+                    count++;
+                    ch[j] = '1';
+                }
+            }
+
+            System.out.println(ch[i] + " = " + count);
+        }
+    }
+}
+
+4.//Consonant count
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    String s = sc.nextLine();
+	    for(int i = 0;i<s.length();i++){
+	        char ch = Character.toLowerCase(s.charAt(i));
+	        if(ch != 'a' &&ch != 'e' &&ch != 'i' &&ch != 'o' &&ch != 'u' ){
+	            System.out.print(s.charAt(i));
+	        }
+	    }
+		
+	}
+}
+
+5.//Add Math functions demonstration in Main class
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	   double n = 25.34;
+	    
+	        System.out.println((int)n);
+	        System.out.println(Math.ceil(n));
+	        System.out.println(Math.floor(n));
+	        System.out.println(Math.abs(n));
+	        System.out.println(Math.sqrt(n));
+	        System.out.println(Math.round(n));
+	    }
+
+
+

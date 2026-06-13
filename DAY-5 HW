@@ -1,0 +1,176 @@
+32.Word Frequency Using HashMap
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter words:");
+        String s = sc.nextLine();
+
+        String arr[] = s.split(" ");
+
+        HashMap<String, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (map.containsKey(arr[i])) {
+                map.put(arr[i], map.get(arr[i]) + 1);
+            } else {
+                map.put(arr[i], 1);
+            }
+        }
+
+        System.out.println(map);
+    }
+}
+
+33.  First Non-Repeating Character Using HashMap
+
+ 
+ import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a string:");
+        String s = sc.nextLine();
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (map.containsKey(ch)) {
+                map.put(ch, map.get(ch) + 1);
+            } else {
+                map.put(ch, 1);
+            }
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (map.get(ch) == 1) {
+                System.out.println(ch);
+                break;
+            }
+        }
+    }
+}
+ 
+34.Check Two Arrays Are Equal Using HashMap
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        int a[] = new int[n];
+        int b[] = new int[n];
+
+        HashMap<Integer, Integer> map1 = new HashMap<>();
+        HashMap<Integer, Integer> map2 = new HashMap<>();
+
+        // First array
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+
+            if (map1.containsKey(a[i]))
+                map1.put(a[i], map1.get(a[i]) + 1);
+            else
+                map1.put(a[i], 1);
+        }
+
+        // Second array
+        for (int i = 0; i < n; i++) {
+            b[i] = sc.nextInt();
+
+            if (map2.containsKey(b[i]))
+                map2.put(b[i], map2.get(b[i]) + 1);
+            else
+                map2.put(b[i], 1);
+        }
+
+        if (map1.equals(map2))
+            System.out.println("Arrays are equal");
+        else
+            System.out.println("Arrays are not equal");
+    }
+}
+ 
+
+35. Find Duplicate Elements Using HashMap
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            int num = sc.nextInt();
+
+            if (map.containsKey(num)) {
+                map.put(num, map.get(num) + 1);
+            } else {
+                map.put(num, 1);
+            }
+        }
+
+        for (int key : map.keySet()) {
+            if (map.get(key) > 1) {
+                System.out.println(key);
+            }
+        }
+    }
+}
+ 
+
+36. Find Two Numbers Whose Sum Is Equal to Target Using HashMap
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int a[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+
+        int target = sc.nextInt();
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+
+            int x = target - a[i];
+
+            if (map.containsKey(x)) {
+                System.out.println(x + " " + a[i]);
+                break;
+            }
+
+            map.put(a[i], 1);
+        }
+    }
+}
